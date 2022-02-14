@@ -1,20 +1,40 @@
 var prompt = require('prompt');
 
-//
-// Start the prompt
-//
-prompt.start();
+
 console.log('Donnez un chiffre entre 1 et 100 :');
-//
-// Get two properties from the user: username and email
-//
-var random = Math.floor((Math.random() * 100) + 1);
-prompt.get(['number'], function (err, result) {
-    //
-    // Log the results.
-    //
-    console.log('Command-line input received:');
-    console.log('Number choosen: ' + result.number);
-    console.log('Nombre mystère:' + result.random);
-});
-});
+
+var mysteryNumber = Math.floor((Math.random() * 100) + 1);
+var count = 3;
+
+function getNumber() {
+    prompt.start();
+    prompt.get(['number'], function (err, result) {
+        calculateScore(parseInt(result.number));
+    });
+};
+
+function calculateScore(playerNumber) {
+    if (mysteryNumber === playerNumber) {
+        winGame();
+    }
+    else if (mysteryNumber < playerNumber) {
+        console.log('Choisissez un nombre plus petit');
+        count--;
+        getNumber();
+    } else if (mysteryNumber > playerNumber) {
+        console.log('Choisissez un nombre plus grand !');
+        count--;
+        getNumber();
+    } else if (count === 0) {
+        looseGame();
+    }
+}
+function winGame() {
+    return console.log('Bravo !');
+}
+
+function looseGame() {
+    return console.log('Perdu !');
+}
+
+getNumber();
