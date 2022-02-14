@@ -1,0 +1,22 @@
+{
+  "name": "moreorless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marioivanovic/MoreOrLess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marioivanovic/MoreOrLess/issues"
+  },
+  "homepage": "https://github.com/marioivanovic/MoreOrLess#readme",
+  "dependencies": {
+    "prompt": "^1.2.1"
+  }
+}
